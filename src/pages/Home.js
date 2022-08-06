@@ -111,9 +111,11 @@ const Home = () => {
       }
 
 
+
+
       async function getPassRate() {
-        const ProposalCounts = Moralis.Object.extend("ProposalCounts");
-        const query = new Moralis.Query(ProposalCounts);
+        const proposalCountTable = Moralis.Object.extend("proposalCountTable");
+        const query = new Moralis.Query(proposalCountTable);
         const results = await query.find();
         let votesUp = 0;
 
@@ -162,7 +164,7 @@ const Home = () => {
                   style={{ width: "200%" }}
                 >
                   <div className="extraWidgetInfo">
-                    <div className="extraTitle">Pass Rate</div>
+                    <div className="extraTitle">Pass Rate {passRate ? `${passRate}%`: []}</div>
                     <div className="progress">
                       <div
                         className="progressPercentage"
@@ -180,9 +182,9 @@ const Home = () => {
                   columnsConfig="10% 70% 20%"
                   data={proposals}
                   header={[
-                    <span>ID</span>,
-                    <span>Description</span>,
-                    <span>Status</span>,
+                    <span className="table_id">ID</span>,
+                    <span className="table_desc">Description</span>,
+                    <span className="table_status">Status</span>,
                   ]}
                   pageSize={5}
                 />

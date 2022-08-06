@@ -118,8 +118,7 @@ const Proposal = () => {
         <div className="proposal">
           <Link to="/">
             <div className="backHome">
-              <Icon fill="#ffffff" size={20} svg="chevronLeft" />
-              Overview
+             <h5> {`< `}turn back to overview dashboard</h5> 
             </div>
           </Link>
           <div>{proposalDetails.description}</div>
@@ -160,16 +159,20 @@ const Proposal = () => {
         </div>
         )}
         <div className="votesDiv">
-          <Table
-            style={{ width: "60%" }}
-            columnsConfig="90% 10%"
-            data={votes}
-            header={[<span>Address</span>, <span>Vote</span>]}
-            pageSize={5}
-          />
+   <div className="votesDiv_votes">
+   <Table
+          
+          columnsConfig="90% 10%"
+          data={votes}
+          header={[<span>Address</span>, <span>Vote</span>]}
+          pageSize={5}
+        />
+   </div>
 
-          <Form
+      <div className="votesDiv_form">
+      <Form
             isDisabled={proposalDetails.text !== "Ongoing"}
+            className="deneme"
             style={{
               width: "35%",
               height: "250px",
@@ -202,6 +205,7 @@ const Proposal = () => {
             }}
             title="Cast Vote"
           />
+      </div>
         </div>
       </div>
       <div className="voting"></div>

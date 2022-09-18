@@ -152,7 +152,7 @@ const Proposal = () => {
                 <div
                   className="progressPercentage"
                   style={{ width: `${percDown}%` }}
-                ></div>
+                ></div>OngoingR
               </div>
             </div>
           </Widget>
@@ -177,12 +177,13 @@ const Proposal = () => {
               width: "35%",
               height: "250px",
               border: "1px solid rgba(6, 158, 252, 0.2)",
+             
             }}
             buttonConfig={{
               isLoading: sub,
               loadingText: "Casting Vote",
               text: "Vote",
-              theme: "secondary",
+              theme: "secondary"
             }}
             data={[
               {

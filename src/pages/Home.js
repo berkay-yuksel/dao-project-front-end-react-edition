@@ -66,12 +66,12 @@ const Home = () => {
     const result = await query.first();
     if (result !== undefined) {
       if (result.attributes.passed) {
-        return { color: "green", text: "Passed" };
+        return { background:"lightgreen!important", color: "green", text: "Passed" };
       } else {
-        return { color: "red", text: "Rejected" };
+        return { background:"rgb(255, 126, 126)!important",color: "red", text: "Rejected" };
       }
     } else {
-      return { color: "blue", text: "Ongoing" };
+      return { background:"lightblue!important",color: "blue", text: "Ongoing" };
     }
   }
 

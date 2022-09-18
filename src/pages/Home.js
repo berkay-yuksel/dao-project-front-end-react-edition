@@ -89,6 +89,7 @@ const Home = () => {
             e.attributes.description,
             <Link to="/proposal" state={{
               description: e.attributes.description,
+              background: (await getStatus(e.attributes.uid)).background,
               color: (await getStatus(e.attributes.uid)).color,
               text: (await getStatus(e.attributes.uid)).text,
               id: e.attributes.uid,
@@ -96,6 +97,7 @@ const Home = () => {
               
               }}>
               <Tag
+                background={(await getStatus(e.attributes.uid)).background}
                 color={(await getStatus(e.attributes.uid)).color}
                 text={(await getStatus(e.attributes.uid)).text}
               />

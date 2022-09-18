@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./pages.css";
-import { TabList, Tab, Widget, Tag, Table, Form } from "web3uikit";
+import {  Widget, Tag, Table, Form } from "web3uikit";
 import { Link } from "react-router-dom";
 import { useMoralis, useMoralisWeb3Api, useWeb3ExecuteFunction } from "react-moralis";
 
@@ -45,8 +45,6 @@ const Home = () => {
         _canVote: voters,
       },
     };
-
-
     await contractProcessor.fetch({
       params: options,
       onSuccess: () => {
@@ -58,8 +56,6 @@ const Home = () => {
         setSub(false);
       },
     });
-
-
   }
 
 
@@ -156,7 +152,7 @@ const Home = () => {
       
             {proposals && (
             <div className="tabContent">
-              Governance Overview
+              Overview
               <div className="widgets">
                 <Widget
                   info={totalP}
